@@ -1,0 +1,179 @@
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">My Clothes</div>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link">Shop</a></li>
+        <li><a href="#" class="nav-link">New Arrivals</a></li>
+        <li><a href="#" class="nav-link">Feedback</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <h1 class="hero-title">Fashion for Everyone</h1>
+    <p class="hero-subtitle">You will never regret your choice</p>
+  </header>
+
+  <main class="zcontainer">
+  
+    <section class="zcategory-section">
+      <h2 class="zsection-title">Shop by Category</h2>
+      <div class="zcategory-grid">
+        <div class="zcategory-card">
+          <div class="zcategory-icon">👗</div>
+          <h3 class="zcategory-title">Women's Fashion</h3>
+          <button class="zcategory-btn">Shop Now</button>
+        </div>
+        <div class="zcategory-card">
+          <div class=z"category-icon">👔</div>
+          <h3 class="zcategory-title">Men's Fashion</h3>
+          <button class="zcategory-btn">Shop Now</button>
+        </div>
+        <div class="zcategory-card">
+          <div class="zcategory-icon">🧸</div>
+          <h3 class="zcategory-title">Kids' Fashion</h3>
+          <button class="zcategory-btn">Shop Now</button>
+        </div>
+        <div class="zcategory-card">
+          <div class="zcategory-icon">💄</div>
+          <h3 class="zcategory-title">Cosmetics</h3>
+          <button class="zcategory-btn">Shop Now</button>
+        </div>
+        <div class="zcategory-card">
+          <div class="zcategory-icon">👜</div>
+          <h3 class="zcategory-title">Accessories</h3>
+          <button class="zcategory-btn">Shop Now</button>
+        </div>
+      </div>
+    </section>
+	
+    <section class="zcoming-soon-section">
+      <h2 class="zsection-title">Coming Soon</h2>
+      <div class="zproducts-grid">
+        <article class="zproduct-card coming-soon">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="zproduct-image">👗</div>
+          <div class="zproduct-info">
+            <h3 class="zproduct-title">Buttoned Tweed Blazer</h3>
+            <p class="zproduct-price">$59.00</p>
+            <button class="znotify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="zproduct-card coming-soon">
+          <div class="zcoming-soon-badge">Coming Soon</div>
+          <div class="zproduct-image">👚</div>
+          <div class="zproduct-info">
+            <h3 class="zproduct-title">Flowy Striped Skirt</h3>
+            <p class="zproduct-price">$49.00</p>
+            <button class="znotify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="zproduct-card coming-soon">
+          <div class="zcoming-soon-badge">Coming Soon</div>
+          <div class="zproduct-image">👕</div>
+          <div class="zproduct-info">
+            <h3 class="zproduct-title">Cotton T-Shirt</h3>
+            <p class="zproduct-price">$39.00</p>
+            <button class="znotify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="zproduct-card coming-soon">
+          <div class="zcoming-soon-badge">Coming Soon</div>
+          <div class="zproduct-image">👔</div>
+          <div class="zproduct-info">
+            <h3 class="zproduct-title">Slim Striped Pocket Shirt</h3>
+            <p class="zproduct-price">$59.00</p>
+            <button class="znotify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="znewsletter-section">
+      <div class="znewsletter-content">
+        <h2 class="znewsletter-title">Join Our Members!</h2>
+        <p class="znewsletter-subtitle">Get updates on new arrivals and exclusive deals</p>
+        <div class="znewsletter-form">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input" id="newsletterEmail">
+          <button class="znewsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">&copy; 2025 My Clothes. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="zsocial-link" aria-label="Facebook">📘</a>
+        <a href="#" class="zsocial-link" aria-label="Instagram">📷</a>
+        <a href="#" class="zsocial-link" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="notification" id="notification">
+    <span id="notificationText"></span>
+  </div>
+
+  <script>
+    function showNotification(message, isSuccess = true) {
+      const notification = document.getElementById('notification');
+      const text = document.getElementById('notificationText');
+      
+      text.textContent = message;
+      notification.style.background = isSuccess 
+        ? 'linear-gradient(135deg, #28a745, #20c997)' 
+        : 'linear-gradient(135deg, #dc3545, #fd7e14)';
+      
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      
+      if (!email) {
+        showNotification('Please enter your email address!', false);
+        return;
+      }
+      
+      if (!email.includes('@') || !email.includes('.')) {
+        showNotification('Please enter a valid email address!', false);
+        return;
+      }
+      
+      showNotification('Thank you for subscribing! You will receive updates on new arrivals and exclusive deals.');
+      document.getElementById('newsletterEmail').value = '';
+    }
+
+    // Add enter key support for newsletter subscription
+    document.getElementById('newsletterEmail').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        subscribeNewsletter();
+      }
+    });
+
+    // Add some interactive effects for category cards
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const categoryName = this.parentElement.querySelector('.category-title').textContent;
+        showNotification(`Redirecting to ${categoryName} section...`);
+      });
+    });
+  </script>
+</body>
+</html>
