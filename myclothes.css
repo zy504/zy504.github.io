@@ -293,3 +293,390 @@
                 font-size: 1.8rem;
             }
         }
+
+
+
+
+
+
+
+
+
+
+    .zcontainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .zsection-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--accent-color);
+    }
+
+   
+    .zproducts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .zproduct-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .zproduct-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .zproduct-image {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      transition: transform 0.3s ease;
+    }
+
+    .zproduct-card:hover .product-image {
+      transform: scale(1.05);
+    }
+
+    .zproduct-info {
+      padding: 1.5rem;
+    }
+
+    .zproduct-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+
+    .zproduct-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .zadd-to-cart-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .zadd-to-cart-btn:hover {
+      background: linear-gradient(135deg, #d81b60, #e91e63);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+    }
+
+    
+    .zcategory-section {
+      margin-bottom: 4rem;
+    }
+
+    .zcategory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .zcategory-card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .zcategory-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .zcategory-card:hover::before {
+      left: 100%;
+    }
+
+    .zcategory-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .zcategory-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .zcategory-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .zcategory-btn {
+      background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .zcategory-btn:hover {
+      background: linear-gradient(135deg, #d81b60, #e91e63);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+    }
+
+ 
+    .zcoming-soon-section {
+      margin-bottom: 4rem;
+    }
+
+    .zproduct-card.coming-soon {
+      position: relative;
+    }
+
+    .zproduct-card.coming-soon::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+    }
+
+    .zcoming-soon-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #ff9800;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+
+    .znotify-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ff9800, #f57c00);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .znotify-btn:hover {
+      background: linear-gradient(135deg, #f57c00, #ef6c00);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    }
+
+    .znewsletter-section {
+      background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+      margin: 4rem -2rem 0;
+      padding: 4rem 2rem;
+      border-radius: var(--border-radius);
+      color: white;
+      text-align: center;
+    }
+
+    .znewsletter-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .znewsletter-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .znewsletter-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .znewsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .znewsletter-input {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      outline: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .znewsletter-input::placeholder {
+      color: #999;
+    }
+
+    .znewsletter-btn {
+      background: white;
+      color: var(--accent-color);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .znewsletter-btn:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+   
+    .znotification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .znotification.show {
+      transform: translateX(0);
+    }
+
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 1rem;
+      }
+      
+      .zcategory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+      
+      .zcategory-card {
+        padding: 1.5rem;
+      }
+      
+      .zcategory-icon {
+        font-size: 2rem;
+      }
+      
+      .zproducts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      
+      .zcontainer {
+        padding: 0 1rem;
+      }
+      
+      .znewsletter-section {
+        margin: 4rem -1rem 0;
+        padding: 3rem 1rem;
+      }
+      
+      .znewsletter-title {
+        font-size: 2rem;
+      }
+      
+      .znewsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .zhero-section {
+        padding: 2rem 1rem;
+      }
+      
+      .zhero-title {
+        font-size: 1.8rem;
+      }
+      
+      .zcategory-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .zproducts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .znewsletter-title {
+        font-size: 1.5rem;
+      }
+    }
