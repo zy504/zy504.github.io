@@ -1,16 +1,180 @@
-<html>
-	<head>
-		<title>
-			My Diary 
-		</title>
-	</head>
-	<h1> My Diary </h1>
-	<hr/>
-	<body>
-		<h3> 01 September 2017 </h3>
-		<p> today is a sunny day...... </p>
-		<hr/>
-		<h3> 10 September 2017 </h3>
-		<p> today is a rainy day and.... </p>
-	</body>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">My Clothes</div>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link">Shop</a></li>
+        <li><a href="#" class="nav-link">New Arrivals</a></li>
+        <li><a href="#" class="nav-link">Feedback</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <h1 class="hero-title">Fashion for Everyone</h1>
+    <p class="hero-subtitle">You will never regret your choice</p>
+  </header>
+
+  <main class="container">
+    <!-- Categories Section -->
+    <section class="category-section">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-icon">👗</div>
+          <h3 class="category-title">Women's Fashion</h3>
+          <button class="category-btn">Shop Now</button>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">👔</div>
+          <h3 class="category-title">Men's Fashion</h3>
+          <button class="category-btn">Shop Now</button>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🧸</div>
+          <h3 class="category-title">Kids' Fashion</h3>
+          <button class="category-btn">Shop Now</button>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">💄</div>
+          <h3 class="category-title">Cosmetics</h3>
+          <button class="category-btn">Shop Now</button>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">👜</div>
+          <h3 class="category-title">Accessories</h3>
+          <button class="category-btn">Shop Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section">
+      <h2 class="section-title">Coming Soon</h2>
+      <div class="products-grid">
+        <article class="product-card coming-soon">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="product-image">👗</div>
+          <div class="product-info">
+            <h3 class="product-title">Buttoned Tweed Blazer</h3>
+            <p class="product-price">$59.00</p>
+            <button class="notify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="product-card coming-soon">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="product-image">👚</div>
+          <div class="product-info">
+            <h3 class="product-title">Flowy Striped Skirt</h3>
+            <p class="product-price">$49.00</p>
+            <button class="notify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="product-card coming-soon">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="product-image">👕</div>
+          <div class="product-info">
+            <h3 class="product-title">Cotton T-Shirt</h3>
+            <p class="product-price">$39.00</p>
+            <button class="notify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+
+        <article class="product-card coming-soon">
+          <div class="coming-soon-badge">Coming Soon</div>
+          <div class="product-image">👔</div>
+          <div class="product-info">
+            <h3 class="product-title">Slim Striped Pocket Shirt</h3>
+            <p class="product-price">$59.00</p>
+            <button class="notify-btn" onclick="showNotification('You will be notified when this item is available!')">Notify Me</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Join Our Members!</h2>
+        <p class="newsletter-subtitle">Get updates on new arrivals and exclusive deals</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" class="newsletter-input" id="newsletterEmail">
+          <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">&copy; 2025 My Clothes. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification from order feedback functionality -->
+  <div class="notification" id="notification">
+    <span id="notificationText"></span>
+  </div>
+
+  <script>
+    function showNotification(message, isSuccess = true) {
+      const notification = document.getElementById('notification');
+      const text = document.getElementById('notificationText');
+      
+      text.textContent = message;
+      notification.style.background = isSuccess 
+        ? 'linear-gradient(135deg, #28a745, #20c997)' 
+        : 'linear-gradient(135deg, #dc3545, #fd7e14)';
+      
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      
+      if (!email) {
+        showNotification('Please enter your email address!', false);
+        return;
+      }
+      
+      if (!email.includes('@') || !email.includes('.')) {
+        showNotification('Please enter a valid email address!', false);
+        return;
+      }
+      
+      showNotification('Thank you for subscribing! You will receive updates on new arrivals and exclusive deals.');
+      document.getElementById('newsletterEmail').value = '';
+    }
+
+    // Add enter key support for newsletter subscription
+    document.getElementById('newsletterEmail').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        subscribeNewsletter();
+      }
+    });
+
+    // Add some interactive effects for category cards
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const categoryName = this.parentElement.querySelector('.category-title').textContent;
+        showNotification(`Redirecting to ${categoryName} section...`);
+      });
+    });
+  </script>
+</body>
 </html>
